@@ -31,22 +31,20 @@ namespace CourseWork.Utils
                 PAGE = page;
                 for (int column = 0; column < 7; column++)
                 {
-                    var dayOfWeek = TODAY.AddDays(column).DayOfWeek;
+                    var dayOfWeek = TODAY.AddDays(column).DayOfWeek;                    
+                    if (ReservationService.isReservationExist(row, column, page, AuthVM.Nickname))
                     {
-                        if (ReservationService.isReservationExist(row, column, page, AuthVM.Nickname))
-                        {
-                            ui = new Button() { Content = ReservationService.GetReservationInfo(row, column, page, AuthVM.Nickname).Members, FontSize = 7 };
-                            ((Button)ui).Click += OpenEditReservationWnd;
-                        }
-                        else
-                        {
-                            ui = new Button() { Content = "+" };
-                            ((Button)ui).Click += OpenNewReservationWnd;
-                        }
-                        contentGrid.Children.Add(ui);
-                        Grid.SetColumn(ui, column);
-                        Grid.SetRow(ui, row);
+                        ui = new Button() { Content = ReservationService.GetReservationInfo(row, column, page, AuthVM.Nickname).Members, FontSize = 7 };
+                        ((Button)ui).Click += OpenEditReservationWnd;
                     }
+                    else
+                    {
+                        ui = new Button() { Content = "+" };
+                        ((Button)ui).Click += OpenNewReservationWnd;
+                    }
+                    contentGrid.Children.Add(ui);
+                    Grid.SetColumn(ui, column);
+                    Grid.SetRow(ui, row);                   
                 }
             }
         }
