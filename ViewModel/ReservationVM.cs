@@ -10,6 +10,7 @@ namespace CourseWork.ViewModel
     public class ReservationVM : BaseVM
     {
         private string nickname = AuthVM.Nickname;
+        private ReservationCanvasVM canvasVM = new();
         #region PROPERTIES
         public string Nickname
         {
@@ -91,6 +92,7 @@ namespace CourseWork.ViewModel
                                        FillUtil.COLUMN,
                                        FillUtil.PAGE,
                                        AuthVM.Nickname);
+                canvasVM.ReservCount--;
                 MessageBox.Show("Reservation has been successfully delete. You can close this window", "Success!", MessageBoxButton.OK, MessageBoxImage.Asterisk);
             }
         }

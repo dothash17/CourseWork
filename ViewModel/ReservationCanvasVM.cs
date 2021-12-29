@@ -1,6 +1,7 @@
 ﻿using CourseWork.Model;
 using System.Windows.Controls;
 using CourseWork.View.UserControls;
+using CourseWork.Model.Data.Service;
 
 namespace CourseWork.ViewModel
 {
@@ -8,9 +9,9 @@ namespace CourseWork.ViewModel
     {
         #region PROPERTIES
 
-        private readonly string _nickname = AuthVM.Nickname;
+        private static readonly string _nickname = AuthVM.Nickname;
         public static string UserIconPath { get => "/Resources/img/UserIcon.png"; }
-        public string UserNickname { get => _nickname ?? "Default user"; }
+        public static string UserNickname { get => _nickname ?? "Default user"; }
 
         private UserControl currentUserControl = new ReservationGridContentUC();
 
@@ -45,6 +46,15 @@ namespace CourseWork.ViewModel
             set { isEnabledNextBtn = value; NotifyPropertyChanged(nameof(IsEnabledNextBtn)); }
         }
 
+        private int reservCount = ReservationService.GetReservationCount(UserNickname);
+
+        public int ReservCount
+        {
+            get { return reservCount; }
+            set { reservCount = value; }
+        }
+
+
         #endregion
         #region COMMANDS
 
@@ -55,6 +65,12 @@ namespace CourseWork.ViewModel
         public RelayCommand NextBtnClick { get => nextBtnClick ?? new(o => _NextBtnClick()); }
 
         private RelayCommand prevBtnClick;
+
+        public ReservationCanvasVM()
+        {
+            ReservCount = reservCount;
+        }
+
         public RelayCommand PrevBtnClick { get => prevBtnClick ?? new(o => _PrevBtnClick()); }
 
         #endregion

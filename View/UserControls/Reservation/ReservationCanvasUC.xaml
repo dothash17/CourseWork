@@ -41,10 +41,11 @@
                     </intr:Interaction.Triggers>
                 </Button>
             </DockPanel>
-            <TextBlock Text="Meet Room" 
+            <TextBlock Text="{Binding ReservCount}" 
                        VerticalAlignment="Top" 
                        FontSize="24"
-                       FontWeight="Bold" Margin="10,4,-10,0"/>
+                       FontWeight="Bold" 
+                       Margin="10,4,-10,0"/>
 
             <Image  Source="{Binding UserIconPath}"
                     Width="100" 

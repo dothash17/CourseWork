@@ -91,5 +91,16 @@ namespace CourseWork.Model.Data.Service
                 db.SaveChanges();
             }
         }
+
+        public static int GetReservationCount(string nickname)
+        {
+            int count = 0;
+            foreach (var item in GetAllReservations())
+            {
+                if (item.User == nickname)
+                    count++;
+            }
+            return count;
+        }
     }
 }
