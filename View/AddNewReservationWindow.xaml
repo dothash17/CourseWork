@@ -40,7 +40,7 @@
                 Cursor="Hand"
                 Content="Add" 
                 Command="{Binding AddNewReservation}"
-                Background="LimeGreen"/> 
+                Background="LimeGreen"/>
     </StackPanel>
 
 </Window>

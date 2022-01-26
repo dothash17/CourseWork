@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:CourseWork"
              StartupUri="View/AuthWindow.xaml">
     <Application.Resources>
-         
+
     </Application.Resources>
 </Application>

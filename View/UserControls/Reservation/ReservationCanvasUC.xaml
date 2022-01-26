@@ -21,7 +21,7 @@
                     Cursor="Hand"
                     IsEnabled="{Binding IsEnabledPrevBtn}"
                     DockPanel.Dock="Left" 
-                    Content="Previous week" >   
+                    Content="Previous week" >
                     <intr:Interaction.Triggers>
                         <intr:EventTrigger EventName="Click">
                             <intr:InvokeCommandAction Command="{Binding PrevBtnClick}"/>
@@ -67,3 +67,4 @@
 
     </DockPanel>
 </UserControl>
+    

@@ -12,7 +12,7 @@
         Height="600" Width="900" WindowStartupLocation="CenterScreen">
     <Grid>
         <uc:ReservationCanvasUC >
-            
+
         </uc:ReservationCanvasUC>
     </Grid>
 </Window>

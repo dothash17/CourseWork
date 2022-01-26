@@ -7,7 +7,7 @@
         xmlns:syncfusion="clr-namespace:Syncfusion.Windows.Controls.Input;assembly=Syncfusion.SfInput.Wpf" xmlns:viewmodel="clr-namespace:CourseWork.ViewModel" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" d:DataContext="{d:DesignInstance Type=viewmodel:ReservationVM}"
         mc:Ignorable="d"
         Title="Edit Reservation" Height="300" Width="300" WindowStartupLocation="CenterScreen">
-   
+
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Closed">
             <i:InvokeCommandAction Command="{Binding OnClosed}"/>
